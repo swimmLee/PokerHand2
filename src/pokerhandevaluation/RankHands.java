@@ -8,9 +8,15 @@ public class RankHands {
     private int[][] my;
     private String message;
     
+    
     public RankHands(int[][] myHand){
         this.my = myHand;
     }
+    
+    /**
+     * Tests card array to make Royal Flush.
+     * @return string "Royal Flush" if test is true. "" otherwise.
+     */
     public String isRoyalFlush(){
         if((my[0][0]==13 && my[1][0]==12 && my[2][0]==11 
                 && my[3][0]==10 && my[4][0]==9)
@@ -22,6 +28,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Tests card array to make Straight Flush.
+     * @return string "Straight Flush" if test true, "" otherwise.
+     */
     public String isStraightFlush(){
         for(int j=0; j<9; j++){
             if((my[0][0]==13-j && my[1][0]==12-j && my[2][0]==11-j
@@ -35,6 +45,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Tests card array to make Four of a Kind.
+     * @return string "Four of a Kind" if test is true, "" otherwise.
+     */
     public String isFourOfAKind(){
         for(int j=0; j<13; j++){
             if((my[0][0]==13-j && my[1][0]==13-j 
@@ -48,6 +62,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Tests card array to make Full House.
+     * @return string "Full House" if test is true, "" otherwise.
+     */
     public String isFullHouse(){
         for(int j=0; j<13; j++){
             if(((my[0][0]==13-j && my[1][0]==13-j && my[2][0]==13-j)
@@ -62,6 +80,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Test card array to make Flush.
+     * @return string "Flush" if test is true, "" otherwise.
+     */
     public String isFlush(){
         if(my[0][1]==my[1][1] && my[1][1]==my[2][1] && my[2][1]==my[3][1] 
                     && my[3][1]==my[4][1]){
@@ -71,6 +93,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Test card array to make Straight.
+     * @return string "Straight" if test is true, "" otherwise.
+     */
     public String isStraight(){
         for(int j=0; j<9; j++){
             if((my[0][0]==13-j && my[1][0]==12-j && my[2][0]==11-j
@@ -82,6 +108,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Test card array to make Three of a Kind.
+     * @return string "Three of a Kind" if test is true, "" otherwise.
+     */
     public String isThreeOfAKind(){
         for(int j=0; j<13; j++){
             if((my[0][0]==13-j && my[1][0]==13-j && my[2][0]==13-j)
@@ -94,6 +124,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Tests card array to make Two Pair.
+     * @return string "Two Pair" if test is true, "" otherwise.
+     */
     public String isTwoPair(){
         if((my[0][0]==my[1][0] && my[2][0]==my[3][0])
                 || (my[0][0]==my[1][0] && my[3][0] == my[4][0])
@@ -104,6 +138,10 @@ public class RankHands {
         return message = "";
     }
     
+    /**
+     * Test card array to make One Pair.
+     * @return string "One Pair" if test is true, "" otherwise.
+     */
     public String isOnePair(){
         if(my[0][0]==my[1][0] || my[1][0]==my[2][0]
               || my[2][0]==my[3][0] || my[3][0]==my[4][0]){
@@ -113,11 +151,21 @@ public class RankHands {
     return message = "";  
     }
     
+    /**
+     * Finds High Card in card array.
+     * @return string "High Card" of for any hand.
+     */
     public String isHighCard(){
         message = "High Card";
         return message;
     }
     
+    /**
+     * Method Tests sorted card array from most restrictive
+     * case to less restrictive case and returns the name of
+     * highest hand possible.
+     * @return string for highest hand.
+     */
     public String getNameOfHand(){
         if(this.isRoyalFlush().equals("Royal Flush"))
             message = "Royal Flush";

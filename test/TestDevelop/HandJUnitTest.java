@@ -17,6 +17,7 @@ public class HandJUnitTest {
     
     public HandJUnitTest() {
     }
+    
     @Before
     public void setUpCard(){
         card = new int[5][2];
