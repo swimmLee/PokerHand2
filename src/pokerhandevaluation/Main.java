@@ -13,7 +13,17 @@ public class Main {
     }
     
     public Main(){
-        Hand try1 = new Hand();
-        try1.setDealHand();
+        Hand tryHand = new Hand();
+        tryHand.setDealHand();
+        tryHand.setSortHand();
+        int [][] myCards = new int[5][2];
+        myCards = tryHand.getCard();
+        RankHands nameHand = new RankHands(myCards);
+        String str = "";
+        str = nameHand.getNameOfHand();
+        
+        System.out.println("your Hand is: " + str);
+        
+        return;
     }
 }
