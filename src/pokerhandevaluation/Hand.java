@@ -5,7 +5,7 @@ package pokerhandevaluation;
  * @author lee heberer
  */
 public class Hand {
-    public int[][] card = new int[5][2];
+    private int[][] card = new int[5][2];
     DealCard cards = new DealCard();
     
     public Hand(){
