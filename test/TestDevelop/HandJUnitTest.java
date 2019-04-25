@@ -40,7 +40,7 @@ public class HandJUnitTest {
             assertEquals("the ranks are not equal.",hand1.getCardRank(i),card[i][0]);
             assertEquals("the suits are not equal.",hand1.getCardSuit(i),card[i][1]);
         }
-        assertArrayEquals("the values are not equal.",hand1.card, card);
+        assertArrayEquals("the values are not equal.",hand1.getCard(), card);
     }
     
     @Test
@@ -50,7 +50,7 @@ public class HandJUnitTest {
             assertEquals("the ranks are not equal.",hand2.getCardRank(i),card[i][0]);
             assertEquals("the suits are not equal.",hand2.getCardSuit(i),card[i][1]);
         }
-        assertArrayEquals("the values are not equal.",hand2.card, card);
+        assertArrayEquals("the values are not equal.",hand2.getCard(), card);
     }
      
     @Test
@@ -71,16 +71,7 @@ public class HandJUnitTest {
             assertEquals("the ranks are not equal.",hand2.getCardRank(i),card[i][0]);
             assertEquals("the suits are not equal.",hand2.getCardSuit(i),card[i][1]);
         }
-        assertArrayEquals("the Arrays are not equal.",hand2.card, card);
+        assertArrayEquals("the Arrays are not equal.",hand2.getCard(), card);
     }
     
-    @Ignore
-    @Test
-    public void setNewHand1(){
-        hand2.setDealHand();
-        //for(int i = 0; i<5; i++){
-        //    assertEquals("the values are not equal.",hand2.getOneRank(i),card[i]);
-        //}
-        assertArrayEquals("the values are not equal.",hand2.card, card);
-    }
 }
